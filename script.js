@@ -20,13 +20,14 @@ var randomizeObject = function () {
   message = "stone";
   return message;
 };
-
+// normal mode , object 1== scissors , object 2 == paper , object 3 == stone
+//reversed mode, object 1 == paper , object 2 == stone , object 3 == scissors
 var winningconditions = function (
   assignedNumToScissorsPaperStone,
   input,
-  scissors,
-  paper,
-  stone
+  object1,
+  object2,
+  object3
 ) {
   if (input == assignedNumToScissorsPaperStone) {
     console.log("draw");
@@ -40,9 +41,9 @@ var winningconditions = function (
       "<br>Now you can type scissors paper or stone to play another round!";
     return myOutputValue;
   } else if (
-    (input == "scissors" && assignedNumToScissorsPaperStone == paper) ||
-    (input == "stone" && assignedNumToScissorsPaperStone == scissors) ||
-    (input == "paper" && assignedNumToScissorsPaperStone == stone)
+    (input == "scissors" && assignedNumToScissorsPaperStone == object2) ||
+    (input == "stone" && assignedNumToScissorsPaperStone == object1) ||
+    (input == "paper" && assignedNumToScissorsPaperStone == object3)
   ) {
     myOutputValue =
       "The computer chose " +
